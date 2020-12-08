@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		.navbar {
+			display: flex;
+			justify-content: space-around;
+			background-color: black;
+			color: white;
+			font-family: Poppins;
+			padding: 20px;
+		}
+
+		.div {
+			height: 0px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			background-color: black;
+			color: black;
+			font-family: Poppins;
+			transition: all 1s ease-in-out;
+		}
+
+
+		div a {
+			display: none;
+			text-decoration: none;
+			color: white;
+			transition: 1s ease-in-out;
+		}
+
+		.burger:hover {
+			cursor: pointer;
+		}
+
+		.burger div{
+			width: 25px;
+			height: 2px;
+			background-color: rgb(226,226,226);
+			margin: 5px;
+			cursor: pointer;
+		}
+
+		p {
+			position: absolute;
+			top: 20px;
+			margin-left: 1200px;
+			cursor: pointer;
+		}
+	</style>
+	<title>Navbar Slider</title>
+</head>
+<body>
+
+	<nav class="navbar">
+		<h1>The Navbar</h1>
+		<div class="burger" onclick="openNav();">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</nav>
+
+	<div class="div">
+		<p onclick="closeNav();">X</p>
+		<a href="#">About</a>
+		<a href="#">Careers</a>
+		<a href="#">Conacts</a>
+	<div>
+
+<script type="text/javascript">
+
+	let burger = document.querySelector('.burger');
+	let div = document.querySelector('.div');
+
+	function openNav() {
+		divA = document.querySelectorAll('.div a')
+		
+
+		div.style.height = '200px'
+		//div.classList.toggle('div-active')
+		div.style.backgroundColor = 'black'
+		div.style.color = 'white'
+		divA.forEach(d => {
+		d.style.display = 'block';
+	})
+	};
+
+	function closeNav() {
+		div.style.height = '0px';
+
+		div.style.color = 'black'
+		div.style.backgroundColor = 'white'
+		divA.forEach(d => {
+		d.style.display = 'none';
+	})
+	};
+</script>
+</body>
+</html>
